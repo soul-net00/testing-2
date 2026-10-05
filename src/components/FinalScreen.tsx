@@ -29,7 +29,8 @@ export const FinalScreen: React.FC<FinalScreenProps> = ({
   useEffect(() => {
     soundFX.playSparkle();
     confetti({
-      particleCount: 100,
+      disableForReducedMotion: true,
+        particleCount: 100,
       spread: 85,
       origin: { y: 0.6 },
       colors: ['#f472b6', '#ec4899', '#c084fc', '#fb7185', '#ffd700'],
@@ -71,9 +72,9 @@ export const FinalScreen: React.FC<FinalScreenProps> = ({
       {/* Top Banner */}
       <div className="flex flex-col items-center pt-2 space-y-1">
         <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-pink-500/25 backdrop-blur-xl border border-pink-400/50 text-pink-200 text-xs font-black tracking-widest uppercase shadow-[0_0_15px_rgba(244,63,142,0.4)]">
-          <Heart className="w-3.5 h-3.5 text-pink-400 fill-current animate-bounce" />
+          <Heart className="w-3.5 h-3.5 text-pink-400 fill-current" />
           <span>{title}</span>
-          <Heart className="w-3.5 h-3.5 text-pink-400 fill-current animate-bounce" />
+          <Heart className="w-3.5 h-3.5 text-pink-400 fill-current" />
         </div>
         <p className="text-xs text-pink-300 font-semibold tracking-wide">
           {subtitle}
@@ -83,15 +84,15 @@ export const FinalScreen: React.FC<FinalScreenProps> = ({
       {/* Main Glass Memory Frame with Final Strongest Photo */}
       <div className="w-full my-auto flex flex-col items-center">
         <div className="w-full relative">
-          <div className="absolute -inset-1.5 bg-gradient-to-r from-pink-500 via-fuchsia-600 to-purple-600 rounded-[2.2rem] blur-xl opacity-75 animate-pulse pointer-events-none" />
+          <div className="absolute -inset-1.5 bg-gradient-to-r from-pink-500 via-fuchsia-600 to-purple-600 rounded-[2.2rem] blur-xl opacity-75 pointer-events-none" />
 
           <div className="relative bg-white/15 backdrop-blur-2xl border-2 border-white/35 rounded-[2rem] p-3.5 shadow-2xl shadow-purple-950/80 flex flex-col items-center">
-            <div className="relative w-full h-72 sm:h-80 rounded-2xl overflow-hidden border border-white/25 bg-purple-950 shadow-inner">
+            <div className="relative w-full h-[min(43dvh,380px)] rounded-2xl overflow-hidden border border-white/25 bg-purple-950 shadow-inner">
               <img
                 src={finalPhoto}
                 alt="Best Friends Forever"
                 referrerPolicy="no-referrer"
-                className="w-full h-full object-cover object-top"
+                className="w-full h-full object-contain object-center"
               />
               <div className="absolute bottom-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-xs font-bold shadow-md border border-white/30 whitespace-nowrap">
                 {nickname} &amp; Me 🫶

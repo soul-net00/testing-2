@@ -23,6 +23,7 @@ export const SuccessScreen: React.FC<SuccessScreenProps> = ({
 
     const fire = () => {
       confetti({
+        disableForReducedMotion: true,
         particleCount: 90,
         spread: 75,
         origin: { y: 0.6 },
@@ -48,19 +49,19 @@ export const SuccessScreen: React.FC<SuccessScreenProps> = ({
     <div className="w-full max-w-[390px] mx-auto min-h-[100dvh] flex flex-col justify-between items-center px-4 py-8 z-10 text-center animate-fade-in select-none">
       {/* Top Badge */}
       <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-pink-500/25 backdrop-blur-xl border border-pink-400/50 text-pink-200 text-xs font-bold shadow-lg shadow-pink-950/40 mt-3">
-        <Sparkles className="w-4 h-4 text-yellow-300 animate-spin duration-3000" />
+        <Sparkles className="w-4 h-4 text-yellow-300" />
         <span>Official Verification: 100%</span>
-        <Heart className="w-3.5 h-3.5 text-pink-400 fill-current animate-bounce" />
+        <Heart className="w-3.5 h-3.5 text-pink-400 fill-current" />
       </div>
 
       {/* Main Glassmorphic Card */}
       <div className="w-full bg-white/10 backdrop-blur-2xl border border-white/25 rounded-3xl p-6 sm:p-8 shadow-2xl shadow-purple-950/70 my-auto flex flex-col items-center gap-5">
-        <div className="w-24 h-24 rounded-full bg-gradient-to-tr from-pink-500 via-fuchsia-500 to-purple-600 flex items-center justify-center text-4xl shadow-[0_0_35px_rgba(244,63,142,0.8)] animate-bounce">
+        <div className="w-24 h-24 rounded-full bg-gradient-to-tr from-pink-500 via-fuchsia-500 to-purple-600 flex items-center justify-center text-4xl shadow-[0_0_35px_rgba(244,63,142,0.8)]">
           👯‍♀️
         </div>
 
         <div className="space-y-2">
-          <h2 className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-pink-200 via-white to-purple-200 tracking-tight drop-shadow-[0_2px_15px_rgba(244,63,142,0.8)] animate-pulse">
+          <h2 className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-pink-200 via-white to-purple-200 tracking-tight drop-shadow-[0_2px_15px_rgba(244,63,142,0.8)]">
             {title}
           </h2>
           <p className="text-base font-bold text-pink-100">
@@ -75,7 +76,7 @@ export const SuccessScreen: React.FC<SuccessScreenProps> = ({
         <button
           onClick={onProceedToMemories}
           type="button"
-          className="mt-2 py-3 px-6 rounded-2xl bg-white/15 hover:bg-white/25 backdrop-blur-md border border-white/30 text-white font-bold text-sm tracking-wide shadow-md transition-all active:scale-95 cursor-pointer flex items-center gap-2 animate-bounce"
+          className="mt-2 py-3 px-6 rounded-2xl bg-white/15 hover:bg-white/25 backdrop-blur-md border border-white/30 text-white font-bold text-sm tracking-wide shadow-md transition-all active:scale-95 cursor-pointer flex items-center gap-2"
         >
           <span>{promptText}</span>
           <Heart className="w-4 h-4 text-pink-400 fill-current" />

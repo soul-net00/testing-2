@@ -53,9 +53,9 @@ export const QuestionScreen: React.FC<QuestionScreenProps> = ({
     <div className="w-full max-w-[390px] mx-auto min-h-[100dvh] flex flex-col justify-between items-center px-4 py-6 z-10 text-center animate-fade-in select-none">
       {/* Top Badge */}
       <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 text-pink-300 text-xs font-semibold shadow-md mt-2">
-        <Sparkles className="w-3.5 h-3.5 text-yellow-300 animate-spin duration-3000" />
+        <Sparkles className="w-3.5 h-3.5 text-yellow-300" />
         <span>The Moment of Truth</span>
-        <Heart className="w-3 h-3 text-pink-400 fill-current animate-pulse" />
+        <Heart className="w-3 h-3 text-pink-400 fill-current" />
       </div>
 
       {/* Main Glass Card */}
@@ -64,7 +64,7 @@ export const QuestionScreen: React.FC<QuestionScreenProps> = ({
         <div className="absolute inset-0 bg-gradient-to-b from-pink-500/15 via-purple-500/10 to-transparent pointer-events-none rounded-3xl" />
 
         {/* Floating Crown Emoji */}
-        <div className="w-16 h-16 rounded-2xl bg-white/15 backdrop-blur-md border border-white/30 flex items-center justify-center text-3xl shadow-lg mb-5 animate-bounce">
+        <div className="w-16 h-16 rounded-2xl bg-white/15 backdrop-blur-md border border-white/30 flex items-center justify-center text-3xl shadow-lg mb-5">
           👑
         </div>
 
@@ -85,7 +85,7 @@ export const QuestionScreen: React.FC<QuestionScreenProps> = ({
           <button
             onClick={handleYes}
             type="button"
-            className="w-full py-4 px-6 rounded-2xl font-black text-xl tracking-wide text-white bg-gradient-to-r from-pink-500 via-fuchsia-500 to-pink-600 hover:from-pink-400 hover:to-pink-500 shadow-[0_0_35px_rgba(244,63,142,0.85)] border border-pink-300/60 transition-all duration-300 active:scale-95 cursor-pointer flex items-center justify-center gap-2 hover:scale-[1.02] animate-pulse"
+            className="w-full py-4 px-6 rounded-2xl font-black text-xl tracking-wide text-white bg-gradient-to-r from-pink-500 via-fuchsia-500 to-pink-600 hover:from-pink-400 hover:to-pink-500 shadow-[0_0_35px_rgba(244,63,142,0.85)] border border-pink-300/60 transition-all duration-300 active:scale-95 cursor-pointer flex items-center justify-center gap-2 hover:scale-[1.02]"
           >
             <Heart className="w-5 h-5 fill-current" />
             <span>{yesButtonText}</span>
@@ -99,7 +99,7 @@ export const QuestionScreen: React.FC<QuestionScreenProps> = ({
               transform: `translate(${noOffset.x}px, ${noOffset.y}px)`,
             }}
             onMouseEnter={handleNoDodge}
-            onTouchStart={handleNoDodge}
+
           >
             <button
               onClick={handleNo}

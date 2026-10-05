@@ -106,7 +106,7 @@ export default function App() {
           onClick={toggleSound}
           type="button"
           aria-label={soundOn ? 'Mute sound' : 'Unmute sound'}
-          className={`p-2 rounded-full backdrop-blur-xl border transition-all active:scale-90 cursor-pointer shadow-md ${
+          className={`min-w-11 min-h-11 flex items-center justify-center p-2 rounded-full backdrop-blur-xl border transition-all active:scale-90 cursor-pointer shadow-md ${
             soundOn
               ? 'bg-pink-500/20 border-pink-400/40 text-pink-300 shadow-[0_0_12px_rgba(244,63,142,0.4)]'
               : 'bg-black/30 border-white/20 text-white/50 hover:bg-black/50'
@@ -123,11 +123,7 @@ export default function App() {
             brand={experience.brand}
             subtitle={experience.subtitle}
             nickname={experience.nickname}
-            introQuestion={experience.introQuestion}
             startButtonText={experience.startButtonText}
-            photos={experience.photos}
-            photoCardLabel={experience.photoCardLabel}
-            photoCardSubtext={experience.photoCardSubtext}
             onStart={handleStart}
           />
         )}

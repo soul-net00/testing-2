@@ -28,6 +28,7 @@ export const NoScreen: React.FC<NoScreenProps> = ({
   }, []);
 
   useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     const loopDuration = 2.4;
     const animate = (time: number) => {
       if (prevTimeRef.current !== null) {

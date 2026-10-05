@@ -48,7 +48,7 @@ export interface ExperienceConfig {
 
 export const experience: ExperienceConfig = {
   nickname: "my Labubu",
-  brand: "BESTIE 💕",
+  brand: "BESTIE 💕 · my Labubu",
   subtitle: "A special question just for you 💕",
   introQuestion: "Would you be my best friend?",
   startButtonText: "Start 💕 →",

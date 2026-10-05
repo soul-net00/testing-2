@@ -54,12 +54,12 @@ export const WordSequence: React.FC<WordSequenceProps> = ({
         <div className="absolute inset-0 bg-gradient-to-b from-pink-500/15 via-purple-500/10 to-transparent pointer-events-none" />
 
         {/* Floating Mini Garnishes */}
-        <div className="absolute top-4 left-6 text-pink-300/60 text-lg animate-pulse">✨</div>
-        <div className="absolute top-5 right-6 text-pink-300/60 text-lg animate-pulse delay-200">🌸</div>
-        <div className="absolute bottom-4 right-8 text-pink-300/60 text-lg animate-pulse delay-500">💫</div>
+        <div className="absolute top-4 left-6 text-pink-300/60 text-lg">✨</div>
+        <div className="absolute top-5 right-6 text-pink-300/60 text-lg delay-200">🌸</div>
+        <div className="absolute bottom-4 right-8 text-pink-300/60 text-lg delay-500">💫</div>
 
         {/* Word Garnish Icon */}
-        <div className="w-14 h-14 rounded-2xl bg-white/15 backdrop-blur-md border border-white/30 flex items-center justify-center text-2xl shadow-inner mb-4 animate-bounce">
+        <div className="w-14 h-14 rounded-2xl bg-white/15 backdrop-blur-md border border-white/30 flex items-center justify-center text-2xl shadow-inner mb-4">
           {garnish}
         </div>
 

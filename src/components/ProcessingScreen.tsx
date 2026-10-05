@@ -16,11 +16,13 @@ export const ProcessingScreen: React.FC<ProcessingScreenProps> = ({
   onComplete,
 }) => {
   const [progress, setProgress] = useState(0);
-  const [activeStepIndex, setActiveStepIndex] = useState(0);
+
 
   useEffect(() => {
     const startTime = performance.now();
     let animationFrameId: number;
+    let completionTimer: ReturnType<typeof setTimeout>;
+    let lastStep = 0;
 
     const update = (now: number) => {
       const elapsed = now - startTime;
@@ -32,24 +34,24 @@ export const ProcessingScreen: React.FC<ProcessingScreenProps> = ({
         Math.floor((currentPct / 100) * steps.length)
       );
 
-      if (stepIdx !== activeStepIndex) {
+      if (stepIdx !== lastStep) {
         soundFX.playSparkle();
-        setActiveStepIndex(stepIdx);
+        lastStep = stepIdx;
       }
 
       if (elapsed < durationMs) {
         animationFrameId = requestAnimationFrame(update);
       } else {
         setProgress(100);
-        setTimeout(() => {
+        completionTimer = setTimeout(() => {
           onComplete();
         }, 350);
       }
     };
 
     animationFrameId = requestAnimationFrame(update);
-    return () => cancelAnimationFrame(animationFrameId);
-  }, [durationMs, steps.length, onComplete, activeStepIndex]);
+    return () => { cancelAnimationFrame(animationFrameId); clearTimeout(completionTimer); };
+  }, [durationMs, steps.length, onComplete]);
 
   return (
     <div className="w-full max-w-[390px] mx-auto min-h-[100dvh] flex flex-col justify-between items-center px-4 py-6 z-10 text-center animate-fade-in select-none">
