@@ -1,0 +1,8 @@
+{
+  "name": "Bestie 💕 — Interactive Friendship Experience",
+  "description": "A cute premium kawaii mobile-first interactive friendship mini-game asking someone to become a best friend with playful animations, glassmorphism, and celebrations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
